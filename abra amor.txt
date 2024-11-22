@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balão de Coração</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #ffe6e6, #ff9999);
+        }
+
+        .balloon-container {
+            position: relative;
+            width: 150px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            transform: rotate(-45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        .heart-text {
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+
+        .string {
+            position: absolute;
+            width: 2px;
+            height: 150px;
+            background: #666;
+            top: 100px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon-container">
+        <div class="heart">
+            <span class="heart-text">Eu gosto de você</span>
+        </div>
+        <div class="string"></div>
+    </div>
+</body>
+</html>
